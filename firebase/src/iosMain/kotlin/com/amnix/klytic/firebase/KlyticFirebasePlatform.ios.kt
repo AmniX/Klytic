@@ -9,7 +9,7 @@ import com.amnix.klytic.Platform
 import com.amnix.klytic.Tracker
 import com.amnix.klytic.UserProperties
 
-actual class KlyticFirebasePlatform private constructor(
+actual class KlyticFirebasePlatform(
     configuration: KlyticFirebaseConfiguration
 ) : Platform, Tracker {
 

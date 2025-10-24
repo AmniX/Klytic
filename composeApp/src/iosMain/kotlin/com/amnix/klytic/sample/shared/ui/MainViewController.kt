@@ -3,6 +3,8 @@ package com.amnix.klytic.sample.shared.ui
 import androidx.compose.ui.window.ComposeUIViewController
 import com.amnix.klytic.Configuration
 import com.amnix.klytic.Klytic
+import com.amnix.klytic.firebase.KlyticFirebaseConfiguration
+import com.amnix.klytic.firebase.KlyticFirebasePlatform
 import com.amnix.klytic.kermit.KlyticNapierConfiguration
 import com.amnix.klytic.kermit.KlyticNapierPlatform
 import io.github.aakira.napier.DebugAntilog
@@ -17,6 +19,11 @@ fun MainViewController(): UIViewController {
             .addPlatform(
                 KlyticNapierPlatform(
                     configuration = KlyticNapierConfiguration.Builder().build()
+                )
+            )
+            .addPlatform(
+                KlyticFirebasePlatform(
+                    configuration = KlyticFirebaseConfiguration.Builder("", "", "").build()
                 )
             )
             .build()

@@ -13,7 +13,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.analytics
 
-actual class KlyticFirebasePlatform private constructor(
+actual class KlyticFirebasePlatform(
     private val context: Context,
     private val configuration: KlyticFirebaseConfiguration,
 ) : Platform, Tracker {
