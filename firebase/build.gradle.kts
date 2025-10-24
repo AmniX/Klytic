@@ -1,5 +1,6 @@
 import com.android.build.api.dsl.androidLibrary
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -27,6 +28,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_21)
         }
     }
+    val xcf = XCFramework()
     listOf(
         iosX64(),
         iosArm64(),
@@ -35,6 +37,9 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "KlyticFirebase"
             isStatic = true
+            export(projects.core)
+            binaryOption("bundleId","com.amnix.klytic.firebase")
+            xcf.add(this)
         }
     }
 
@@ -62,7 +67,7 @@ kotlin {
             }
         }
         commonMain.dependencies {
-            implementation(project(":core"))
+            api(projects.core)
             implementation(libs.kotlinx.coroutines.core)
         }
 
