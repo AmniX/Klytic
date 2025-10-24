@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '16.0'
+
+target 'iosApp' do
+  use_frameworks!
+
+  # Firebase frameworks needed by the firebase module (consumed via ComposeApp)
+  pod 'FirebaseCore', '12.4.0'
+  pod 'FirebaseAnalytics', '12.4.0'
+  
+end
+

@@ -23,6 +23,8 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
             isStatic = true
+            export(projects.core)
+            export(projects.firebase)
         }
     }
     
@@ -41,9 +43,9 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(projects.core)
-            implementation(projects.napier)
-            implementation(projects.firebase)
+            api(projects.core)
+            api(projects.napier)
+            api(projects.firebase)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

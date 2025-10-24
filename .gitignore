@@ -13,3 +13,5 @@ xcuserdata
 *.gpg
 /**/*.podspec
 /**/google-services.json
+/**/Pods/
+/**/**.lock

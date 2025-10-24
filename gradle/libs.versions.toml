@@ -13,6 +13,7 @@ coreKtx = "1.17.0"
 composeMultiplatform = "1.9.1"
 androidx-lifecycle = "2.9.5"
 androidx-activity = "1.11.0"
+googlePlayServices = "4.4.4"
 
 [libraries]
 firebase-analytics = { module = "com.google.firebase:firebase-analytics", version.ref = "firebaseAnalytics" }
@@ -34,3 +35,4 @@ composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMul
 vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenPublish" }
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+googlePlayServices = { id = "com.google.gms.google-services", version.ref = "googlePlayServices" }
