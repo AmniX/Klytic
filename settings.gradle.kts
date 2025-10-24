@@ -1,3 +1,5 @@
+rootProject.name = "Klytic"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     repositories {
         google()
@@ -13,5 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Klytic"
+
+include(":composeApp")
 include(":core", ":firebase", ":kermit", ":napier")
