@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.vanniktech.mavenPublish)
+    alias(libs.plugins.kotlinCocoapods)
 }
 
 group = "com.amnix.klytic"
@@ -37,7 +38,29 @@ kotlin {
         }
     }
 
+    cocoapods {
+        version = "1.0"
+        summary = "A platform-agnostic analytics library built with Kotlin Multiplatform."
+        homepage = "https://github.com/AmniX/Klytic"
+        name = "KlyticFirebase"
+        ios.deploymentTarget = "16.0"
+        framework {
+            isStatic = true
+        }
+        pod("FirebaseAnalytics") {
+            version = "12.4.0"
+        }
+        pod("FirebaseCore") {
+            version = "12.4.0"
+        }
+    }
+
     sourceSets {
+        all {
+            languageSettings {
+                optIn("kotlinx.cinterop.ExperimentalForeignApi")
+            }
+        }
         commonMain.dependencies {
             implementation(project(":core"))
             implementation(libs.kotlinx.coroutines.core)
