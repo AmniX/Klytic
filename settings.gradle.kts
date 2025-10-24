@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Klytic"
-include(":core", ":firebase")
+include(":core", ":firebase", ":kermit", ":napier")

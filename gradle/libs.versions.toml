@@ -1,18 +1,22 @@
 [versions]
 agp = "8.13.0"
 firebaseAnalytics = "23.0.0"
+kermit = "2.0.8"
 kotlin = "2.2.21"
 android-minSdk = "24"
 android-compileSdk = "36"
 kotlinxCoroutinesCore = "1.10.2"
+napier = "2.7.1"
 vanniktechMavenPublish = "0.34.0"
 coreKtx = "1.17.0"
 
 [libraries]
 firebase-analytics = { module = "com.google.firebase:firebase-analytics", version.ref = "firebaseAnalytics" }
+kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 
 [plugins]
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }

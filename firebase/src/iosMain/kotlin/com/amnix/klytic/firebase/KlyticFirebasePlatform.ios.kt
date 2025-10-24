@@ -24,6 +24,6 @@ actual class KlyticFirebasePlatform private constructor(
 
     actual override suspend fun track(event: KlyticEvent) {
         @Suppress("UNCHECKED_CAST")
-        FIRAnalytics.logEventWithName(event.name, parameters = event.values as? Map<Any?, *>?)
+        FIRAnalytics.logEventWithName(event.name, parameters = event.params as? Map<Any?, *>?)
     }
 }

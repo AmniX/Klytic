@@ -12,7 +12,7 @@ version = "1.0.0"
 
 kotlin {
     androidLibrary {
-        namespace = "com.amnix.klytic.core"
+        namespace = "com.amnix.klytic.napier"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 
@@ -32,7 +32,8 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.kotlinx.coroutines.core)
+            implementation(project(":core"))
+            implementation(libs.napier)
         }
 
         commonTest.dependencies {
@@ -47,7 +48,7 @@ mavenPublishing {
     coordinates(group.toString(), "klytic", version.toString())
 
     pom {
-        name = "Klytic-core"
+        name = "Klytic-napier"
         description = "A platform-agnostic analytics library built with Kotlin Multiplatform."
         inceptionYear = "2025"
         url = "https://github.com/AmniX/Klytic"

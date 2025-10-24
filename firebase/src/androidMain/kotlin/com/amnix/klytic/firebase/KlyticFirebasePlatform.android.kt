@@ -5,14 +5,11 @@ package com.amnix.klytic.firebase
 import android.content.Context
 import android.os.Bundle
 import androidx.core.os.bundleOf
-import com.amnix.klytic.Configuration
 import com.amnix.klytic.KlyticEvent
 import com.amnix.klytic.Platform
 import com.amnix.klytic.Tracker
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
-import com.google.firebase.FirebaseOptions
-import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.analytics
 
 actual class KlyticFirebasePlatform private constructor(
@@ -34,7 +31,7 @@ actual class KlyticFirebasePlatform private constructor(
     })
 
     actual override suspend fun track(event: KlyticEvent) {
-        firebaseAnalytics.logEvent(event.name, event.values.toBundle())
+        firebaseAnalytics.logEvent(event.name, event.params.toBundle())
     }
 
     private fun Map<String, Any?>.toBundle(): Bundle = bundleOf(*this.toList().toTypedArray())

@@ -2,5 +2,5 @@ package com.amnix.klytic
 
 data class KlyticEvent(
     val name: String,
-    val values: Map<String, Any>
+    val params: Map<String, Any>
 )
