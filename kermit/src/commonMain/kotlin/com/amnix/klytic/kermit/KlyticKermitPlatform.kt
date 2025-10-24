@@ -5,13 +5,9 @@ import com.amnix.klytic.KlyticEvent
 import com.amnix.klytic.Platform
 import com.amnix.klytic.Tracker
 
-class KlyticKermitPlatform(
-    private val configuration: KlyticKermitConfiguration
-) : Platform, Tracker {
+class KlyticKermitPlatform(configuration: KlyticKermitConfiguration) : Platform, Tracker {
+    private val logger = Logger.withTag(configuration.tag)
     override suspend fun track(event: KlyticEvent) {
-        if (configuration.tag == null)
-            Logger.d { "Logging Event ${event.name} with params ${event.params}" }
-        else Logger.withTag(configuration.tag)
-            .d { "Logging Event ${event.name} with params ${event.params}" }
+        logger.d { "Logging Event ${event.name} with params ${event.params}" }
     }
 }

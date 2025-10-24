@@ -1,3 +1,5 @@
 package com.amnix.klytic
 
-interface Platform
+interface Platform {
+    fun setUserProperties(userProperties: UserProperties)
+}

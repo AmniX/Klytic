@@ -8,6 +8,7 @@ import androidx.core.os.bundleOf
 import com.amnix.klytic.KlyticEvent
 import com.amnix.klytic.Platform
 import com.amnix.klytic.Tracker
+import com.amnix.klytic.UserProperties
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.analytics.analytics
@@ -35,5 +36,12 @@ actual class KlyticFirebasePlatform private constructor(
     }
 
     private fun Map<String, Any?>.toBundle(): Bundle = bundleOf(*this.toList().toTypedArray())
+
+    actual override fun setUserProperties(userProperties: UserProperties) {
+        firebaseAnalytics.setUserId(userProperties.userId)
+        userProperties.customProperties.forEach { (key, value) ->
+            firebaseAnalytics.setUserProperty(key, value)
+        }
+    }
 
 }
